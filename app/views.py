@@ -8,11 +8,6 @@ from .models import *
 from .serializers import *
 # Create your views here.
 
-class ReadOnlyView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly,)
-
-class CompanyViews(ReadOnlyView):
-    def get(self, request):
-        queryset = Company.objects.all()
-        return Response({'data': queryset})
+def Home(self):
+    return HttpResponse('Hello world')
     
