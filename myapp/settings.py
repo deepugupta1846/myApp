@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 # Add this to make Django work with PyMySQL
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -29,7 +31,7 @@ SECRET_KEY = 'django-insecure-mb91xwz--1mxa84+gzyeudbw0s=r+$fn_bdv7_xx_o@o9z)@%*
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'myapp-production-0abd.up.railway.app',  # Replace with your Railway domain
+    '*'
 ]
 
 
@@ -98,14 +100,18 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'USER': 'root',
-        'HOST': 'mysql.railway.internal',
-        'PORT': '3306',
-        'PASSWORD': 'ftxcSwRTncTMDVwCyJJoYmppqsZkeBmQ',
-    },
+        'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+    #  'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'railway',
+    #     'USER': 'root',
+    #     'HOST': 'mysql.railway.internal',
+    #     'PORT': '3306',
+    #     'PASSWORD': 'ftxcSwRTncTMDVwCyJJoYmppqsZkeBmQ',
+    # },
 }
 
 
