@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'myapp-production-0abd.up.railway.app',
-     '.railway.app',
+    '.railway.app',
 ]
 
 
